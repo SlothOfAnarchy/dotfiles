@@ -15,52 +15,32 @@ dependencies=(
 
 # file|graphical?
 linkfiles=(
-	"$HOME/.gemrc:misc/gemrc|no"
 	"$HOME/.gitconfig:misc/gitconfig|no"
 	"$HOME/.zlogin:zsh/zlogin|no"
 	"$HOME/.zlogout:zsh/zlogout|no"
 	"$HOME/.zprofile:zsh/zprofile|no"
 	"$HOME/.zshenv:zsh/zshenv|no"
 	"$HOME/.zshrc:zsh/zshrc|no"
-	"$HOME/.vimrc:vim/vimrc|no"
 	"$HOME/.tmux.conf:misc/tmux.conf|no"
 	"$HOME/.curlrc:misc/curlrc|no"
 	"$HOME/.config/htop/htoprc:misc/htoprc|no"
 	"$HOME/.config/pacaur/config:misc/pacaur|no"
-	"$HOME/.vim/autoload/plug.vim:vim/vim-plug/plug.vim|no"
 	"$HOME/.gnupg/gpg.conf:gpg/gpg.conf|no"
 	"$HOME/.gnupg/gpg-agent.conf:gpg/gpg-agent.conf|no"
 	"$HOME/.gnupg/dirmngr.conf:gpg/dirmngr.conf|no"
 	"$HOME/.curlrc:misc/curlrc|no"
 	"$HOME/.ssh/config:misc/ssh_config|no"
 	# Graphical stuff
-	"$HOME/.xinitrc:graphical/xinitrc|yes"
-	"$HOME/.gtkrc-2.0:graphical/gtk/gtkrc-2.0|yes"
-	"$HOME/.config/gtk-2.0/gtkfilechooser.ini:graphical/gtk/gtk2.0-filechooser.ini|yes"
-	"$HOME/.config/gtk-3.0/settings.ini:graphical/gtk/gtkrc-3.0|yes"
-	"$HOME/.config/gtk-3.0/bookmarks:graphical/gtk/gtk-bookmarks|yes"
-	"$HOME/.config/i3/config:graphical/i3|yes"
-	"$HOME/.config/dunst/dunstrc:graphical/dunstrc|yes"
 	"$HOME/.config/fontconfig/fonts.conf:graphical/fonts.conf|yes"
-	"$HOME/.config/OpenImageIO/iv.conf:graphical/iv.conf|yes"
-	"$HOME/.config/rofi/config:graphical/rofi|yes"
-	"$HOME/.config/mimeapps.list:graphical/mimeapps.list|yes"
 	"$HOME/.config/redshift.conf:graphical/redshift.conf|yes"
-	"$HOME/.config/yad.conf:graphical/yad.conf|yes"
 )
 # dir|graphical?
 mkdirs=(
-	"$HOME/.vim/autoload|no"
-	"$HOME/.vim/backup|no"
-	"$HOME/.vim/swap|no"
 	"$HOME/.config/systemd/user"
 	"$HOME/.config/gtk-2.0"
 	"$HOME/.config/gtk-3.0"
 	"$HOME/.config/i3"
-	"$HOME/.config/dunst"
 	"$HOME/.config/fontconfig"
-	"$HOME/.config/OpenImageIO"
-	"$HOME/.config/rofi"
 	"$HOME/.gnupg"
 	"$HOME/.ssh"
 )
@@ -70,16 +50,6 @@ units=(
 	'dirmngr.socket'
 	'gpg-agent.socket'
 	'gpg-agent-ssh.socket'
-	'threestatus.socket'
-)
-
-autostart=(
-	firefox
-	pidgin
-	redshift-gtk
-	spotify
-	st
-	telegramdesktop
 )
 
 ###
@@ -141,7 +111,6 @@ checkDependencies() {
 createlocalconfig() {
 	mkdir -pv "${BASEDIR}/local"
 	touch "${BASEDIR}/local/zsh"
-	touch "${BASEDIR}/local/vim"
 	touch "${HOME}/.ssh/config.local"
 }
 
@@ -208,13 +177,6 @@ link() {
 	fi
 }
 
-astart() {
-	mkdir -pv "${HOME}/.config/autostart"
-	for s in "${autostart[@]}"; do
-		touch "${HOME}/.config/autostart/${s}.desktop"
-	done
-}
-
 systemd() {
 	# Link
 	msg2 'Link'
@@ -236,9 +198,6 @@ systemd() {
 }
 
 updatesw() {
-	msg2 'vim'
-	vim +PlugUpdate +qall
-	vim +PlugClean! +qall
 	msg2 'zsh'
 	if [ ! -f "${BASEDIR}/scripts/antibody" ]; then
 		# TODO How to update??
@@ -269,8 +228,6 @@ msg "Updating submodules..."
 updaterepos
 msg "Linking..."
 link
-msg "Configuring autostart..."
-astart
 msg "Configuring systemd..."
 systemd
 msg "Updating plugins..."
