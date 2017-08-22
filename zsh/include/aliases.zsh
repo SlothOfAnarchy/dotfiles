@@ -45,7 +45,6 @@ alias outertmux='tmux -L "$tmuxname"'
 # Misc. stuff
 alias sudo='sudo ' # Use aliases with sudo
 alias vi=vim
-alias nano=vim
 alias why='whence -fa'
 alias fuck='sudo $(fc -nl -1)'
 alias dd='dd status=progress'
@@ -56,7 +55,8 @@ alias :q='exit'
 alias privip="ip a | grep 'inet ' | awk -F' ' '{print $2}'"
 alias pubip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
-alias tree='tree -I .git -FC'
+alias tree='tree -I .git -FCafhC'
+alias rsync='rsync -avhixEAXP --stats'
 
 # Includes
 source "$zshincl/git-aliases.zsh"
