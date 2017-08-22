@@ -7,11 +7,10 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "$HOME/.zprofile" ]]; then
 	source "$HOME/.zprofile"
 fi
 
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='vimpager'
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='less'
 path+="$HOME/bin"
-path+="$HOME/.vim/plugged/vimpager"
 test -f "/etc/profile.d/perlbin.sh" && source "$_"
 
 PATHBACKUP="$PATH"
