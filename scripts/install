@@ -9,7 +9,6 @@ set -o nounset
 dependencies=(
 	zsh
 	git
-	vim
 	curl
 )
 
