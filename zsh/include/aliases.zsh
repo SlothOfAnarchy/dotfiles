@@ -57,6 +57,7 @@ alias pubip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
 alias tree='tree -I .git -FCafhC'
 alias rsync='rsync -avhixEAXP --stats'
+alias stuvus-tunnel='sshuttle --dns -r firewalk 172.27.0.0/16'
 
 # Includes
 source "$zshincl/git-aliases.zsh"
