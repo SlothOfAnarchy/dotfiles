@@ -1,7 +1,8 @@
 #!/bin/bash
 
-sleep 1 # This works around the screen turning on immediately
-xset dpms 0 0 10 # Turn off after 10 seconds of inactivity
-xset dpms force off # Turn off screen now
-slock # Lock
-@DOTFILES@/scripts/xset # Reset DPMS
+foc="$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}')"
+if xprop -id "${foc}" | _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then
+    echo "Fullscreen window"
+else
+    i3lock -ef -c 505050
+fi
