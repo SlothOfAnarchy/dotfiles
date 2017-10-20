@@ -58,7 +58,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 # History file
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zhistory
 # Size of history
 HISTSIZE=100000000
 SAVEHIST="$HISTSIZE"
