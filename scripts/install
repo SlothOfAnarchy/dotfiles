@@ -32,6 +32,7 @@ linkfiles=(
 	# Graphical stuff
 	"$HOME/.config/fontconfig/fonts.conf:graphical/fonts.conf|yes"
 	"$HOME/.config/redshift.conf:graphical/redshift.conf|yes"
+	"$HOME/.config/sublime-text-3/Packages/User/PyYapf.sublime-settings:misc/PyYapf.sublime-settings|yes"
 )
 # dir|graphical?
 mkdirs=(
@@ -42,6 +43,7 @@ mkdirs=(
 	"$HOME/.config/fontconfig"
 	"$HOME/.gnupg"
 	"$HOME/.ssh"
+	"$HOME/.config/sublime-text-3/Packages/User"
 )
 
 # unit|graphical?

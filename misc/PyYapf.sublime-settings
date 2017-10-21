@@ -1,0 +1,11 @@
+{
+      // full path and command to run yapf
+      "yapf_command": "/usr/bin/yapf",
+      "on_save": true,
+      "popup_errors": true,
+      "config": {
+          "COLUMN_LIMIT": 119,
+          "CONTINUATION_INDENT_WIDTH": 2,
+          "INDENT_WIDTH": 2
+      }
+}
