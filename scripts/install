@@ -29,6 +29,7 @@ linkfiles=(
 	"$HOME/.gnupg/dirmngr.conf:gpg/dirmngr.conf|no"
 	"$HOME/.curlrc:misc/curlrc|no"
 	"$HOME/.ssh/config:misc/ssh_config|no"
+        "$HOME/.nanorc:misc/nanorc|no"
 	# Graphical stuff
 	"$HOME/.config/fontconfig/fonts.conf:graphical/fonts.conf|yes"
 	"$HOME/.config/redshift.conf:graphical/redshift.conf|yes"
