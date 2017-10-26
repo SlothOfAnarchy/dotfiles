@@ -60,7 +60,7 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 # History file
 HISTFILE=~/.zhistory
 # Size of history
-HISTSIZE=1000
+HISTSIZE=100000
 SAVEHIST="$HISTSIZE"
 # local options
 test -f "@DOTFILES@/local/zsh" && source "$_"
