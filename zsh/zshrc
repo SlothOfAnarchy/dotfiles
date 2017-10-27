@@ -41,6 +41,8 @@ source "$zshincl/functions.zsh"
 source "$zshincl/ssh-agent.zsh"
 # Clipboard
 source "$zshincl/clipboard.zsh"
+# find-the-command
+source "/usr/share/doc/find-the-command/ftc.zsh"
 
 ###############
 ## zsh options
