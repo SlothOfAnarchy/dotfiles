@@ -31,6 +31,9 @@ linkfiles=(
 	"$HOME/.ssh/config:misc/ssh_config|no"
         "$HOME/.nanorc:misc/nanorc|no"
 	# Graphical stuff
+        "$HOME/.xbindkeysrc:graphical/xbindkeysrc|yes"
+        "$HOME/.config/dunst/dunstrc:graphical/dunstrc|yes"
+        "$HOME/.xinitrc:graphical/xinitrc|yes"
 	"$HOME/.config/fontconfig/fonts.conf:graphical/fonts.conf|yes"
 	"$HOME/.config/redshift.conf:graphical/redshift.conf|yes"
 	"$HOME/.config/sublime-text-3/Packages/User/PyYapf.sublime-settings:misc/PyYapf.sublime-settings|yes"
