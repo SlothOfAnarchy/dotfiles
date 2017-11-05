@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/sh
 
 # Start dbus
@@ -22,9 +23,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # Start user-defined programs
-while IFS='' read -r f; do
-	(gtk-launch "${f}" || :) &
-done <<<"$(find .config/autostart -type f -name '*.desktop' -printf '%f\n')"
+st &
+telegram-desktop &
+spotify &
+nemo &
+thunderbird &
+firefox &
+nm-applet &
+
 
 # Start window manager
 exec i3
