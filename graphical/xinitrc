@@ -12,4 +12,5 @@ nemo &
 thunderbird &
 whatsapp-web-desktop &
 xautolock -time 10 -locker '~/.dotfiles/scripts/neatolock' -killer 'systemctl suspend' -notify 30 -detectsleep -killtime 30 &
+~/.dotfiles/scripts/thinkpad-dock &
 exec i3
