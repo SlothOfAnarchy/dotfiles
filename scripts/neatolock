@@ -4,5 +4,5 @@ foc="$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}')"
 if xprop -id "${foc}" | _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then
     echo "Fullscreen window"
 else
-    i3lock -ef -c 505050
+    i3lock -ef -i ~/wallpapers/nZBJAsK.png
 fi
