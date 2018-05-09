@@ -47,7 +47,7 @@ alias sudo='sudo ' # Use aliases with sudo
 alias vi=vim
 alias why='whence -fa'
 alias fuck='sudo $(fc -nl -1)'
-alias dd='dd status=progress'
+alias dd='dd status=progress conv=fsync iflag=fullblock oflag=sync'
 alias yay='echo "\\(^o^)/"'
 alias lsblk='lsblk -o NAME,MAJ:MIN,SIZE,TYPE,UUID,LABEL,FSTYPE,MOUNTPOINT'
 alias userctl='systemctl --user'
@@ -57,7 +57,6 @@ alias pubip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
 alias tree='tree -I .git -FCafhC'
 alias rsync='rsync -avhixEAXP --stats'
-alias stuvus-tunnel='sshuttle --dns -r firewalk 129.69.139.0/26'
 
 # Includes
 source "$zshincl/git-aliases.zsh"
