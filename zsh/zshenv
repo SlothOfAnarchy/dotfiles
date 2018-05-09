@@ -9,8 +9,9 @@ fi
 
 export EDITOR='nano'
 export VISUAL='nano'
-export PAGER='less'
+export PAGER='most'
 path+="$HOME/bin"
+path+="/opt/omnetpp/bin"
 test -f "/etc/profile.d/perlbin.sh" && source "$_"
 
 PATHBACKUP="$PATH"
