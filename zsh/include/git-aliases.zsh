@@ -25,7 +25,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 
 # git push/pull
-alias gl='git pull'
+alias gl='branch="`git rev-parse --abbrev-ref HEAD`"; git fetch && git diff "$branch" "origin/$branch" && git merge'
 alias gp='git push'
 alias gp!='gp --force'
 
