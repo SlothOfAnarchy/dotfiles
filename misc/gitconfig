@@ -24,3 +24,5 @@
 [mergetool]
 	prompt = false
 	keepBackup = false
+[credential]
+	helper = cache --timeout=86000
