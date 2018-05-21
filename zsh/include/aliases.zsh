@@ -57,6 +57,12 @@ alias pubip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
 alias tree='tree -I .git -FCafhC'
 alias rsync='rsync -avhixEAXP --stats'
+function ssh_func {
+        export TMUX_CURRENT_WINDOW_ID="$(tmux -L autoattach display-message -p '#I')"
+        /usr/bin/ssh "$@" &&
+        /usr/bin/tmux -L autoattach set-window-option -t "$TMUX_CURRENT_WINDOW_ID" automatic-rename on
+}
+alias ssh="ssh_func"
 
 # Includes
 source "$zshincl/git-aliases.zsh"
