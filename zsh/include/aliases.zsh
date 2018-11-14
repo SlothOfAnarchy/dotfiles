@@ -63,7 +63,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ssh="@DOTFILES@/scripts/pass2agent; ssh"
 alias va=vagrant
 alias ip='ip -c'
-
+alias tree='tree -I .git -FCafhC'
+alias rsync='rsync -avhixEAXP --stats'
 # Includes
 source "$zshincl/git-aliases.zsh"
 source "$zshincl/grep.zsh"
