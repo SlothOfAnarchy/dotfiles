@@ -51,7 +51,7 @@ alias vi=vim
 alias nano=vim
 alias why='whence -fa'
 alias fuck='sudo $(fc -nl -1)'
-alias dd='dd status=progress'
+alias dd='dd status=progress oflag=sync'
 alias yay='echo "\\(^o^)/"'
 alias lsblk='lsblk -o NAME,MAJ:MIN,SIZE,TYPE,UUID,LABEL,FSTYPE,MOUNTPOINT'
 alias userctl='systemctl --user'
@@ -62,7 +62,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ssh="@DOTFILES@/scripts/pass2agent; ssh"
 alias va=vagrant
 alias ip='ip -c'
-
+alias tree='tree -I .git -FCafhC'
+alias rsync='rsync -avhixEAXP --stats'
 # Includes
 source "$zshincl/git-aliases.zsh"
 source "$zshincl/grep.zsh"
