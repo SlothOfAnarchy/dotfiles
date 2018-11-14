@@ -49,9 +49,10 @@ alias outertmux='tmux -L "$tmuxname"'
 alias sudo='sudo ' # Use aliases with sudo
 alias vi=vim
 alias nano=vim
+alias ip='ip -c'
 alias why='whence -fa'
 alias fuck='sudo $(fc -nl -1)'
-alias dd='dd status=progress'
+alias dd='dd status=progress conv=fsync iflag=fullblock oflag=sync'
 alias yay='echo "\\(^o^)/"'
 alias lsblk='lsblk -o NAME,MAJ:MIN,SIZE,TYPE,UUID,LABEL,FSTYPE,MOUNTPOINT'
 alias userctl='systemctl --user'
