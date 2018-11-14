@@ -9,16 +9,16 @@ fi
 
 xset dpms 0 0 0 &
 [ -x /usr/bin/numlockx ] && /usr/bin/numlockx &
-redshift-gtk &
-firefox &
-telegram-desktop &
-xfce4-terminal &
-mattermost-desktop &
-spotify &
-slack &
-nemo &
-thunderbird &
-whatsapp &
+#redshift-gtk &
+#firefox &
+#telegram-desktop &
+#xfce4-terminal &
+#mattermost-desktop &
+#spotify &
+#slack &
+#nemo &
+#thunderbird &
+#whatsapp &
 xautolock -time 10 -locker '~/.dotfiles/scripts/neatolock' -killer 'systemctl suspend' -notify 30 -detectsleep -killtime 30 &
-~/.dotfiles/scripts/thinkpad-dock &
+~/.dotfiles/scripts/thinkpad-undock &
 exec i3

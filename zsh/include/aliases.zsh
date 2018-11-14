@@ -52,6 +52,7 @@ alias yay='echo "\\(^o^)/"'
 alias lsblk='lsblk -o NAME,MAJ:MIN,SIZE,TYPE,UUID,LABEL,FSTYPE,MOUNTPOINT'
 alias userctl='systemctl --user'
 alias :q='exit'
+alias ip='ip -c'
 alias privip="ip a | grep 'inet ' | awk -F' ' '{print $2}'"
 alias pubip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
@@ -63,7 +64,8 @@ function ssh_func {
         /usr/bin/tmux -L autoattach set-window-option -t "$TMUX_CURRENT_WINDOW_ID" automatic-rename on
 }
 alias ssh="ssh_func"
-
+export GIT_SSH="tmux_ssh"
+export RSYNC_CONNECT_PROG="tmux_ssh"
 # Includes
 source "$zshincl/git-aliases.zsh"
 source "$zshincl/grep.zsh"

@@ -5,7 +5,6 @@
       "popup_errors": true,
       "config": {
           "COLUMN_LIMIT": 119,
-          "CONTINUATION_INDENT_WIDTH": 2,
-          "INDENT_WIDTH": 2
+          "CONTINUATION_INDENT_WIDTH": 2
       }
 }
