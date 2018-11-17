@@ -29,9 +29,13 @@ floating_modifier $mod
 
 # Change focus
 bindsym $mod+h focus left
+bindsym $mod+Left focus left
 bindsym $mod+j focus down
+bindsym $mod+Down focus down
 bindsym $mod+k focus up
+bindsym $mod+Up focus up
 bindsym $mod+l focus right
+bindsym $mod+Right focus right
 bindsym $mod+a focus parent
 bindsym $mod+d focus child
 bindsym $mod+Return [class="st-256color"] focus
@@ -41,6 +45,18 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left¶
+bindsym $mod+Shift+Down move down¶
+bindsym $mod+Shift+Up move up¶
+bindsym $mod+Shift+Right move right¶
+
+# Move workspaces between screens¶
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+h move workspace to output left¶
+bindsym $mod+Ctrl+l move workspace to output left¶
+bindsym $mod+Shift+i move workspace to output right
+bindsym $mod+Shift+o move workspace to output left
 
 # Split current container
 bindsym $mod+b split h
@@ -68,25 +84,24 @@ bindsym $mod+q restart
 bindsym --release $mod+g exec --no-startup-id @DOTFILES@/scripts/i3-lock
 
 # Switch workspaces
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
+bindsym $mod+1 workspace "1:work"
+bindsym $mod+2 workspace "2:term"
+bindsym $mod+3 workspace "3:chat"
+bindsym $mod+4 workspace "4:music"
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
-bindsym $mod+m workspace ♫
 bindsym $mod+o workspace prev
 bindsym $mod+i workspace next
 
 # Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+1 move container to workspace "1:work"
+bindsym $mod+Shift+2 move container to workspace "2:term"
+bindsym $mod+Shift+3 move container to workspace "3:chat"
+bindsym $mod+Shift+4 move container to workspace "4:music"
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
@@ -95,13 +110,12 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Move workspaces
-bindsym $mod+Shift+o move workspace to output left
-bindsym $mod+Shift+i move workspace to output right
 
 # Rename workspaces
 bindsym $mod+u exec i3-input -F 'rename workspace to "%s"' -P 'Workspace name: ' -f 'pango:Noto Sans Regular 9'
 
 # Start stuff
+bindsym --release $mod+d exec --no-startup-id dmenu_run -b -i -h 25 -p '>'¶
 bindsym --release $mod+r exec --no-startup-id rofi -modi drun -show drun
 bindsym --release $mod+x exec --no-startup-id rofi -modi window -show window
 bindsym --release $mod+t exec --no-startup-id @DOTFILES@/scripts/i3-passrofi
@@ -140,9 +154,22 @@ bindsym $mod+e mode "resize"
 #####
 # Default workspaces
 #####
-workspace 2 output DVI-D-0
-workspace "♫" output DVI-D-0
-assign [class="Spotify"] "♫"
+workspace "1:work" output DP2-2
+workspace "2:term" output DP2-3
+workspace "4:music" output eDP1
+assign [class="spotify"] "4:music"
+assign [class="Spotify"] "4:music"
+assign [class="xfce4-terminal"] "2:term"
+assign [class="telegram-desktop"] "3:chat"
+assign [class="TelegramDesktop"] "3:chat"
+#assign [class="web.whatsapp.com"] "3:chat"
+assign [name="WhatsApp"] "3:chat"
+assign [class="Chromium-Browser"] "3:chat"
+assign [class="Firefox"] "1:work"
+assign [class="Nemo"] "1:work"
+assign [class="Mail"] "1:work"
+assign [class="Daily"] "1:work"
+assign [class="st-256color"] "2:term"
 
 #####
 # Settings for windows
@@ -153,9 +180,7 @@ for_window [class="Spotify"] border none
 # Visuals
 #####
 
-font pango:Noto Sans Regular 9
-
-# Colors
+font pango:Noto Sans Regular 11
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #f0544c #f0544c #333333 #f0544c   #444444
