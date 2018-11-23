@@ -10,9 +10,6 @@ workspace_layout tabbed
 # Hide borders if there only is one window
 hide_edge_borders smart
 
-# Going to the current workspace goes to the previous workspace
-workspace_auto_back_and_forth yes
-
 # Wait before unsetting the urgent flag
 force_display_urgency_hint 500 ms
 
@@ -162,8 +159,7 @@ assign [class="Spotify"] "4:music"
 assign [class="xfce4-terminal"] "2:term"
 assign [class="telegram-desktop"] "3:chat"
 assign [class="TelegramDesktop"] "3:chat"
-#assign [class="web.whatsapp.com"] "3:chat"
-assign [name="WhatsApp"] "3:chat"
+assign [class="web.whatsapp.com"] "3:chat"
 assign [class="Chromium-Browser"] "3:chat"
 assign [class="Firefox"] "1:work"
 assign [class="Nemo"] "1:work"
