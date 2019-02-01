@@ -65,6 +65,7 @@ alias va=vagrant
 alias ip='ip -c'
 alias tree='tree -I .git -FCafhC'
 alias rsync='rsync -avhixEAXP --stats'
+alias df='df -h'
 # Includes
 source "$zshincl/git-aliases.zsh"
 source "$zshincl/grep.zsh"
