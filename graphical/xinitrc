@@ -22,8 +22,10 @@ fi
 
 # Start user-defined programs
 st &
+@HOME@/bin/docked &
 spotify &
 nemo &
+blueman-applet &
 thunderbird &
 firefox &
 nm-applet &
